@@ -21,13 +21,13 @@ Or install it yourself as:
 ## Usage
 
 
-### Documents
+### Handling Documents
 
 ```ruby
 require 'couchy'
 
 server = Couchy::Server.new
-database = Couchy::Database.new('mydb', server)
+database = server.database('mydb')
 
 database.save_document("DocId", { name: "Alex" })
 # => {:ok=>true, :id=>"DocId", :rev=>"1-d8ab39494dd33ca3ff2430bdb0bf0836"}
@@ -42,9 +42,13 @@ database.get_document("DocId")
 # => deleted (Couchy::ResouceNotFound)
 ```
 
-### Databases
+### Handling Databases
 
 ```ruby
+require 'couchy'
+
+server = Couchy::Server.new
+
 server.create_database("anotherdb")
 # => {:ok=>true}
 

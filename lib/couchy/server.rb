@@ -26,6 +26,10 @@ module Couchy
       response
     end
 
+    def database(name)
+      Database.new(name, self)
+    end
+
     private
 
     def request(method, path, data)
