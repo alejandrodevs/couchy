@@ -1,6 +1,6 @@
 # Couchy
 
-This is a simple ruby wrapper around [CouchDB][https://couchdb.apache.org]’s RESTFul API.
+This is a simple ruby wrapper around [CouchDB](https://couchdb.apache.org)’s RESTFul API.
 
 ## Installation
 
@@ -23,14 +23,7 @@ Or install it yourself as:
 ```ruby
 require 'couchy'
 
-server = Couchy::Server.new({
-  host: 'mycouchserver.com', # Default: localhost
-  protocol: 'https',         # Default: http
-  port: '6000',              # Default: 5984
-  username: 'myusername',    # Optional: If requires authentication
-  password: 'mypassword'     # Optional: If requires authentication
-})
-
+server = Couchy::Server.new
 database = Couchy::Database.new('mydb', server)
 
 database.save_document("DocId", { name: "Alex" })
