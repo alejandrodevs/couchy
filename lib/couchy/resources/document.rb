@@ -3,15 +3,11 @@
 module Couchy
   module Resources
     module Document
-      def head_document(id)
-        exec(:get, "#{name}/#{id}")
-      end
-
       def get_document(id)
         exec(:get, "#{name}/#{id}")
       end
 
-      def save_document(id, data)
+      def save_document(id, data = {})
         exec(:put, "#{name}/#{id}", data.to_json)
       end
 

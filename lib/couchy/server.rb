@@ -3,6 +3,7 @@
 module Couchy
   class Server
     include Sphene::Attributes
+    include Resources::Database
 
     ERRORS = {
       not_found: ResouceNotFound

@@ -20,6 +20,9 @@ Or install it yourself as:
 
 ## Usage
 
+
+### Documents
+
 ```ruby
 require 'couchy'
 
@@ -37,6 +40,19 @@ database.delete_document("DocId", rev: "1-d8ab39494dd33ca3ff2430bdb0bf0836")
 
 database.get_document("DocId")
 # => deleted (Couchy::ResouceNotFound)
+```
+
+### Databases
+
+```ruby
+server.create_database("anotherdb")
+# => {:ok=>true}
+
+server.delete_database("anotherdb")
+# => {:ok=>true}
+
+server.get_database("anotherdb")
+# => Database does not exist. (Couchy::ResouceNotFound)
 ```
 
 ## Development
